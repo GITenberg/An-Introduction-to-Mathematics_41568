@@ -1,0 +1,43 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-3, -2), P(9, 3), "3.6 x 1.5in");
+
+  begin();
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(xmin(), 1), P(xmax(), 1));
+
+  line(P(0, ymin()), P(0, ymax()));
+  for (int i=1; i<6; ++i)
+    {
+      line(P(i, 0), P(i, 1));
+      std::stringstream buf;
+      buf << "_{" << i << "}$";
+
+      label(P(i, 0), P(2, 2), "$B" + buf.str(), tr);
+      label(P(i, 1), P(0, 2), "$C" + buf.str(), tr);
+    }
+
+  h_axis_labels(P(1, 0), P(5, 0), 4, P(0, -4), b);
+  label(P(0, 0), P(-2, -4), "$0$", bl);
+
+  label(P(0, 1), P(-2, -4), "$1$", bl);
+  label(P(0, 1), P( 2, 2), "$B$", tr);
+
+  label(P(xmin(), 0), P(0, -4), "$X'$", b);
+  label(P(xmin(), 1), P(0,  2), "$A'$", t);
+
+  label(P(xmax(), 0), P(0, -4), "$X$", b);
+  label(P(xmax(), 1), P(0,  2), "$A$", t);
+
+  label(P(0, ymin()), P(-2, 0), "$Y'$", l);
+  label(P(0, ymax()), P(-2, 0), "$Y$", l);
+
+  tikz_format();
+  end();
+}

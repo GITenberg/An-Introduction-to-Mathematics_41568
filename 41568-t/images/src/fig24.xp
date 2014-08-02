@@ -1,0 +1,34 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(0, 0), P(4.5, 2.25), "4.5 x 2.25in");
+
+  begin();
+  P pB(0, 0), pD1(1, 0.8), pE1(1.375, 0), pC(2*pE1), pA(2*pD1),
+    dX(pC + P(0.5, 0)), pE(pB + dX), pF(pE1 + dX), pD(pD1 + dX);
+
+  bold();
+  triangle(pB, pC, pA);
+  line(pE1, pD1);
+  line(1.5*pE1, 1.5*pD1);
+
+  triangle(pE, pF, pD);
+
+  label(pB, P(0, -4), "$B$", b);
+  label(pE1, P(0, -4), "$E'$", b);
+  label(pC, P(0, -4), "$C$", b);
+
+  label(pE, P(0, -4), "$E$", b);
+  label(pF, P(0, -4), "$F$", b);
+
+  label(pA, P(0, 2), "$A$", t);
+  label(pD, P(0, 2), "$D$", t);
+
+  label(pD1, P(0, 2), "$D'$", t);
+
+  tikz_format();
+  end();
+}

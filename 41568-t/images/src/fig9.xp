@@ -1,0 +1,54 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-3.5, -2.25), P(3.5, 3), "4.2 x 3.15in");
+
+  begin();
+
+  double mx(3), my(1);
+
+  P O(0, 0), p0(mx, my), p1(-mx, my), p2(-mx, -my), p3(mx, -my);
+
+  bold();
+
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  rect(p2, p0);
+
+  label(P(xmin(), 0), P(-4, 0), "$X'$", l);
+  label(P(xmax(), 0), P(4, 0), "$X$", r);
+
+  label(P(0, ymin(), 0), P(2, 0), "$Y'$", r);
+  label(P(0, ymax(), 0), P(2, 0), "$Y$", r);
+
+  label(O, P(-2, -4), "$O$", bl);
+
+  label(p0 & E_1, P(2, 2), "$M$", tr);
+  label(p1 & E_1, P(-2, -4), "$M'$", bl);
+
+  label(p0 & E_2, P(2, 2), "$N$", tr);
+  label(p2 & E_2, P(2, -4), "$N'$", br);
+
+  label(p0 & E_2, P(2, -4), "$+1$", br);
+  label(p2 & E_2, P(2, 2), "$-1$", tr);
+
+  dot(p0, P(0, 2), "$P$", t);
+  dot(p1, P(0, 2), "$P'$", t);
+
+  dot(p2, P(0, -4), "$P''$", b);
+  dot(p3, P(0, -4), "$P'''$", b);
+
+  label(P(0.5*mx, 0), P(0, 2), "$+3$", t);
+  label(P(-0.5*mx, 0), P(0, 2), "$-3$", t);
+
+  tick_size(1);
+  h_axis(P(-2, 0), P(2, 0), 4);
+  v_axis(P(0, 1), P(0, 3), 2);
+
+  tikz_format();
+  end();
+}

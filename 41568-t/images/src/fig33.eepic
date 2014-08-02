@@ -1,0 +1,23 @@
+%% Generated from fig33.xp on Sat Dec  1 19:10:14 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [0,3] x [0,1.5]
+%%   Actual size: 4.5 x 2.25in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4.5in,2.25in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,0in)--(2.0625in,0in)--(1.5in,1.2in)--(0in,0in)--cycle;
+\draw (2.4375in,0in)--(4.5in,0in)--(3.9375in,1.2in)--(2.4375in,0in)--cycle;
+\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$B$}}}
+\pgftext[at={\pgfpoint{2.0625in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$C$}}}
+\pgftext[at={\pgfpoint{2.4375in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$E$}}}
+\pgftext[at={\pgfpoint{4.5in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$F$}}}
+\pgftext[at={\pgfpoint{1.5in}{1.22767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$A$}}}
+\pgftext[at={\pgfpoint{3.9375in}{1.22767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$D$}}}
+\end{tikzpicture}

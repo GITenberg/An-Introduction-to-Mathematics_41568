@@ -1,0 +1,35 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void Arrow(const P& tail, const P& head, double t = 0.5)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+}
+
+int main()
+{
+  picture(P(0, 0), P(3, 2), "2 x 1.5in");
+
+  begin();
+  arrow_width(6);
+  arrow_ratio(2);
+  arrow_inset(0.75);
+
+  P pE(0, 0), pA(2, 2), pB(3, 1.5);
+
+  bold();
+
+  arrow(pE, pA);
+  arrow(pE, pB);
+
+  label(pE, P(0, -4), "$E$", b);
+
+  label(pA, P(2, 2), "$A$", tr);
+  label(pB, P(2, 2), "$B$", tr);
+
+  tikz_format();
+  end();
+}

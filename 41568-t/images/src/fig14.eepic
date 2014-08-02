@@ -1,0 +1,33 @@
+%% Generated from fig14.xp on Thu Nov 29 22:04:21 EST 2012 by
+%% ePiX-1.2.9
+%% 
+%%   Cartesian bounding box: [-3,3] x [-2.5,2.5]
+%%   Actual size: 4.2 x 3.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4.2in,3.5in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,1.75in)--(4.2in,1.75in);
+\draw (2.1in,0in)--(2.1in,3.5in);
+\pgftext[at={\pgfpoint{4.2in}{1.69465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X$}}}
+\pgftext[at={\pgfpoint{0in}{1.69465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X'$}}}
+\pgftext[at={\pgfpoint{2.07233in}{0in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$Y'$}}}
+\pgftext[at={\pgfpoint{2.07233in}{3.5in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$Y$}}}
+\pgftext[at={\pgfpoint{2.08616in}{1.61163in}}] {\makebox(0,0)[tr]{\hbox{\color{rgb_000000}$O$}}}
+\draw (0in,0.35in)--(3.15in,3.5in);
+\draw (4.2in,0.35in)--(1.05in,3.5in);
+\draw (0.35in,0in)--(3.85in,3.5in);
+\draw (0.35in,3.5in)--(3.85in,0in);
+\pgftext[at={\pgfpoint{1.4in}{1.69465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$A$}}}
+\pgftext[at={\pgfpoint{2.82767in}{1.77767in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$A_{1}$}}}
+\pgftext[at={\pgfpoint{2.18302in}{2.45in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$B$}}}
+\pgftext[at={\pgfpoint{0.377674in}{-0.027674in}}] {\makebox(0,0)[tl]{\hbox{\color{rgb_000000}$L'$}}}
+\pgftext[at={\pgfpoint{3.82233in}{3.52767in}}] {\makebox(0,0)[br]{\hbox{\color{rgb_000000}$L$}}}
+\pgftext[at={\pgfpoint{0.377674in}{3.5in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$L_{1}$}}}
+\pgftext[at={\pgfpoint{3.87767in}{0in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$L_{1}'$}}}
+\end{tikzpicture}

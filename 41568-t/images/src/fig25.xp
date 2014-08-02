@@ -1,0 +1,26 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(0, 0), P(2, 1), "2.75 x 1.375in");
+
+  begin();
+  P pB(0, 0), pC(1, 0), pE(1.9, 0), pA(pB + E_2), pD(pC + E_2), pF(pE + E_2);
+
+  bold();
+  rect(pB, pF);
+  line(pC, pD);
+
+  label(pB, P(0, -4), "$B$", b);
+  label(pC, P(0, -4), "$C$", b);
+  label(pE, P(0, -4), "$E$", b);
+
+  label(pA, P(0, 2), "$A$", t);
+  label(pD, P(0, 2), "$D$", t);
+  label(pF, P(0, 2), "$F$", t);
+
+  tikz_format();
+  end();
+}

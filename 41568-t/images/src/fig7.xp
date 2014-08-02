@@ -1,0 +1,52 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void Arrow(const P& tail, const P& head, double t = 0.5)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+}
+
+void Arrow(const P& tail, const P& head, double t,
+	   const P& offset, const std::string& msg, epix_label_posn al)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+
+  label(tmp, offset, msg, al);
+}
+
+int main()
+{
+  picture(P(0, 0), P(2, 1.25), "3 x 1.875in");
+
+  begin();
+  arrow_width(6);
+  arrow_ratio(2);
+  arrow_inset(0.75);
+
+  P pA(0, 0), pB(2, 0), pD(0, 1.25), pC(pB + pD);
+
+  bold();
+
+  Arrow(pA, pB, 0.6, P(0, 4), "$x$", t);
+  Arrow(pA, pC, 0.6, P(2, -4), "$r$", br);
+  Arrow(pA, pD, 0.6, P(4, 0), "$y$", r);
+
+  line(pB, pC);
+  line(pD, pC);
+
+  label(pA, P(0, -4), "$A$", b);
+  label(pB, P(0, -4), "$B$", b);
+
+  label(pC, P(0, 2), "$C$", t);
+  label(pD, P(0, 2), "$D$", t);
+
+  arc_measure(pA, pB, pC, P(2, 2), "$m$", r, 32);
+
+  tikz_format();
+  end();
+}

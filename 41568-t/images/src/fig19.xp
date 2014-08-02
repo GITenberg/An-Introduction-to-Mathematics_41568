@@ -1,0 +1,41 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double ma(2.25), mb(1.5);
+
+P f(double t)
+{
+  return P(ma*Cos(t), mb*Sin(t));
+}
+
+void ray(const P& tail, const P& head, double t = 0)
+{
+  line(tail, tail + (1 + 0.01*t)*(head - tail));
+}
+
+int main()
+{
+  picture(P(-3, -2), P(3, 2), "3 x 2in");
+
+  begin();
+  const double dt(0.8);
+  P pP(f(1.25)), pA(f(-3*dt)), pB(f(-2*dt)), pC(f(-1*dt)), pD(f(0));
+
+  bold();
+  plot(f, 0, 2*M_PI, 120);
+
+  ray(pP, pA, 10);
+  ray(pP, pB, 10);
+  ray(pP, pC, 10);
+  ray(pP, pD, 10);
+
+  dot(pP, P(0, 2), "$P$", t);
+  dot(pA, P(0, -6), "$A$", b);
+  dot(pB, P(0, -4), "$B$", br);
+  dot(pC, P(4, 0), "$C$", br);
+  dot(pD, P(2, 4), "$D$", r);
+
+  tikz_format();
+  end();
+}

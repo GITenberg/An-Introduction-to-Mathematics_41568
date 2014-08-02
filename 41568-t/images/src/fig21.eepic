@@ -1,0 +1,74 @@
+%% Generated from fig21.xp on Sat Dec  1 16:51:48 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [-4,4] x [-3,3]
+%%   Actual size: 4 x 3in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4in,3in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,1.375in)--(0.0458375in,1.37207in)--
+  (0.091675in,1.369in)--(0.137512in,1.36577in)--
+  (0.18335in,1.36238in)--(0.229188in,1.35882in)--
+  (0.275025in,1.35507in)--(0.320863in,1.35111in)--
+  (0.3667in,1.34694in)--(0.412538in,1.34252in)--
+  (0.458375in,1.33783in)--(0.504212in,1.33286in)--
+  (0.55005in,1.32758in)--(0.595887in,1.32195in)--
+  (0.641725in,1.31594in)--(0.687562in,1.30951in)--
+  (0.7334in,1.30262in)--(0.779237in,1.29521in)--
+  (0.825075in,1.28722in)--(0.870912in,1.27858in)--
+  (0.91675in,1.26921in)--(0.962587in,1.25902in)--
+  (1.00842in,1.24788in)--(1.05426in,1.23566in)--
+  (1.1001in,1.22219in)--(1.14594in,1.20728in)--
+  (1.19177in,1.19068in)--(1.23761in,1.17208in)--
+  (1.28345in,1.15111in)--(1.32929in,1.12726in)--
+  (1.37512in,1.09992in)--(1.42096in,1.06825in)--
+  (1.4668in,1.03113in)--(1.51264in,0.987035in)--
+  (1.55847in,0.933781in)--(1.60431in,0.868188in)--
+  (1.65015in,0.785408in)--(1.69599in,0.677665in)--
+  (1.74182in,0.531665in)--(1.78766in,0.322629in)--(1.8335in,-0.0015015in);
+\draw (2.1665in,3.0015in)--(2.21234in,2.67737in)--
+  (2.25818in,2.46834in)--(2.30401in,2.32233in)--
+  (2.34985in,2.21459in)--(2.39569in,2.13181in)--
+  (2.44152in,2.06622in)--(2.48736in,2.01297in)--
+  (2.5332in,1.96887in)--(2.57904in,1.93175in)--
+  (2.62487in,1.90008in)--(2.67071in,1.87274in)--
+  (2.71655in,1.84889in)--(2.76239in,1.82792in)--
+  (2.80823in,1.80932in)--(2.85406in,1.79272in)--
+  (2.8999in,1.77781in)--(2.94574in,1.76434in)--
+  (2.99158in,1.75212in)--(3.03741in,1.74098in)--
+  (3.08325in,1.73079in)--(3.12909in,1.72142in)--
+  (3.17492in,1.71278in)--(3.22076in,1.70479in)--
+  (3.2666in,1.69738in)--(3.31244in,1.69049in)--
+  (3.35827in,1.68406in)--(3.40411in,1.67805in)--
+  (3.44995in,1.67242in)--(3.49579in,1.66714in)--
+  (3.54162in,1.66217in)--(3.58746in,1.65748in)--
+  (3.6333in,1.65306in)--(3.67914in,1.64889in)--
+  (3.72497in,1.64493in)--(3.77081in,1.64118in)--
+  (3.81665in,1.63762in)--(3.86249in,1.63423in)--(3.90833in,1.631in)--
+  (3.95416in,1.62793in)--(4in,1.625in);
+\draw (0in,1.5in)--(2in,1.5in)--(4in,1.5in);
+\draw (2in,0in)--(2in,1.5in)--(2in,3in);
+\draw (0.875in,1.5in)--(0.875in,1.38889in)--(0.875in,1.27778in);
+\draw (1.8335in,1.5in)--(1.8335in,0.749249in)--(1.8335in,-0.0015015in);
+\draw (2.1665in,1.5in)--(2.1665in,2.25075in)--(2.1665in,3.0015in);
+\draw (3.125in,1.5in)--(3.125in,1.61111in)--(3.125in,1.72222in);
+\pgftext[at={\pgfpoint{2.02767in}{1.44465in}}] {\makebox(0,0)[tl]{\hbox{\color{rgb_000000}$0$}}}
+\pgftext[at={\pgfpoint{0.875in}{1.52767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$M_{1}$}}}
+\pgftext[at={\pgfpoint{1.80583in}{1.44465in}}] {\makebox(0,0)[tr]{\hbox{\color{rgb_000000}$M_{2}$}}}
+\pgftext[at={\pgfpoint{2.19417in}{1.52767in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$M_{3}$}}}
+\pgftext[at={\pgfpoint{3.125in}{1.44465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$M_{4}$}}}
+\pgftext[at={\pgfpoint{0in}{1.52767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$X'$}}}
+\pgftext[at={\pgfpoint{4in}{1.44465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X$}}}
+\pgftext[at={\pgfpoint{2.02767in}{0in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$Y'$}}}
+\pgftext[at={\pgfpoint{1.97233in}{3in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$Y$}}}
+\pgftext[at={\pgfpoint{0.847326in}{1.2501in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$P_{1}$}}}
+\pgftext[at={\pgfpoint{1.80583in}{-0.0015015in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$P_{2}$}}}
+\pgftext[at={\pgfpoint{2.19417in}{3.0015in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$P_{3}$}}}
+\pgftext[at={\pgfpoint{3.15267in}{1.7499in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$P_{4}$}}}
+\end{tikzpicture}

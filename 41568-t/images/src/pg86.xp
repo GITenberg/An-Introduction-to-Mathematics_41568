@@ -1,0 +1,48 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-5, 0), P(6, 1), "4 x 0.5in");
+
+  begin();
+
+  bold();
+
+  double dY1(4), dY2(6);
+
+  tick_size(1);
+  line(P(xmin(), 0), P(xmax(), 0));
+  h_axis(P(xmin() + 1, 0), P(xmax() - 1, 0), xsize() - 2);
+
+  label(P(0, 0), P(0, -4), "$O$", b);
+  label(P(1, 0), P(0, -4), "$A$", b);
+  label(P(1, 0), P(0, dY2), "$+1$", t);
+
+  label(P(2, 0), P(0, -4), "$B$", b);
+  label(P(2, 0), P(0, dY2), "$+2$", t);
+
+  label(P(3, 0), P(0, -4), "$C$", b);
+  label(P(3, 0), P(0, dY2), "$+3$", t);
+
+  label(P(4, 0), P(0, -4), "$D$", b);
+  label(P(5, 0), P(0, -4), "$E$", b);
+
+  label(P(-1, 0), P(0, -4), "$A'$", b);
+  label(P(-1, 0), P(0, dY2), "$-1$", t);
+
+  label(P(-2, 0), P(0, -4), "$B'$", b);
+  label(P(-2, 0), P(0, dY2), "$-2$", t);
+
+  label(P(-3, 0), P(0, -4), "$C'$", b);
+  label(P(-3, 0), P(0, dY2), "$-3$", t);
+
+  label(P(-4, 0), P(0, -4), "$D'$", b);
+
+  label(P(xmax(), 0), P(4, 0), "$X$", r);
+  label(P(xmin(), 0), P(-4, 0), "$X'$", l);
+
+  tikz_format();
+  end();
+}

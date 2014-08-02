@@ -1,0 +1,80 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double ma(1.25), mb(1), mc(hypot(ma, mb)), mx(ma*ma/mc);
+
+P f(double t)
+{
+  return P(ma*cosh(t), mb*sinh(t));
+}
+
+P f1(double t)
+{
+  return -P(ma*cosh(t), mb*sinh(t));
+}
+
+int main()
+{
+  picture(P(-3, -2), P(3, 2), "4.8 x 3.2in");
+
+  begin();
+
+  P pC(0, 0), pP(f(1.25)), pP1(-pP),
+    pN(mx, pP.x2()), pN1p(-pN), pN1(mx, -pP.x2()),
+    pS(mc, 0), pS1(-mc, 0),
+    pH(ma*ymax()/mb, ymax()), pHp(-pH), pH1(ma*ymax()/mb, ymin()), pH1p(-pH1);
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+
+  line(pH, pHp);
+  line(pH1, pH1p);
+
+  line(pP, pN);
+  line(pP, pS);
+
+  line(pP1, pN1);
+  line(pP1, pS1);
+  line(pP1, pS);
+
+  // line and label M added to match text
+  line(pP, pP & E_1);
+  label(pP & E_1, P(0, -4), "$M$", b);
+
+  line(P(-mx, ymin()), P(-mx, ymax()));
+  line(P( mx, ymin()), P( mx, ymax()));
+
+  // Labels A, A' added to match text
+  label(P( ma, 0), P(-2, 2), "$A$", tl);
+  label(P(-ma, 0), P( 2, 2), "$A'$", tr);
+
+  label(P( mx, 0), P(-2, -4), "$X$", bl);
+  label(P(-mx, 0), P( 2, -4), "$X'$", br);
+
+  label(pN, P(2, 2), "$N$", tr);
+  label(pN1, P(2, -4), "$N_{1}$", br);
+  label(pN1p, P(2, -4), "$N_{1}'$", br);
+
+  label(pP, P(2, -2), "$P$", br);
+  // Label text reads P_{1} in the original, but text refers to P'
+  label(pP1, P(-2, 2), "$P'$", tl);
+
+  label(pC, P(0, -6), "$C$", b);
+
+  label(pS, P(0, -4), "$S$", b);
+  label(pS1, P(0, 2), "$S'$", t);
+
+  label(pH, P(-2, 0), "$H$", tl);
+  label(pHp, P(2, -2), "$H'$", br);
+
+  label(pH1p, P(2, 0), "$H_{1}'$", tr);
+  label(pH1, P(-2, -2), "$H_{1}$", bl);
+
+  set_crop();
+  plot(f, -2, 2, 60);
+  plot(f1, -2, 2, 60);
+
+  tikz_format();
+  end();
+}

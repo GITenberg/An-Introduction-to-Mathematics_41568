@@ -1,0 +1,54 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P f(double t)
+{
+  return P(t, recip(t));
+}
+
+int main()
+{
+  picture(P(-4, -3), P(4, 3), "4 x 3in");
+
+  begin();
+
+  double M1(-2.25), M2(-0.333), M3(0.333), M4(2.25);
+
+  P p1(f(M1)), p2(f(M2)), p3(f(M3)), p4(f(M4));
+
+  bold();
+  plot(f, xmin(), M2, 40);
+  plot(f, M3, xmax(), 40);
+
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  line(P(M1, 0), p1);
+  line(P(M2, 0), p2);
+  line(P(M3, 0), p3);
+  line(P(M4, 0), p4);
+
+  label(P(0, 0), P(2, -4), "$0$", br);
+
+  label(P(M1, 0), P(0, 2), "$M_{1}$", t);
+  label(P(M2, 0), P(-2, -4), "$M_{2}$", bl);
+
+  label(P(M3, 0), P(2, 2), "$M_{3}$", tr);
+  label(P(M4, 0), P(0, -4), "$M_{4}$", b);
+
+  label(P(xmin(), 0), P(0, 2), "$X'$", t);
+  label(P(xmax(), 0), P(0, -4), "$X$", b);
+
+  label(P(0, ymin()), P( 2, 0), "$Y'$", r);
+  label(P(0, ymax()), P(-2, 0), "$Y$", l);
+
+  label(p1, P(-2, -2), "$P_{1}$", b);
+  label(p2, P(-2, 0), "$P_{2}$", l);
+
+  label(p3, P(2, 0), "$P_{3}$", r);
+  label(p4, P(2, 2), "$P_{4}$", t);
+
+  tikz_format();
+  end();
+}

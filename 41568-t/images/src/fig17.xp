@@ -1,0 +1,40 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P f(double t)
+{
+  return P(0.25*t*t, t);
+}
+
+int main()
+{
+  picture(P(-1, -4), P(7, 4), "2.5 x 2.5in");
+
+  begin();
+
+  P pA(f(0)), pP(f(3.5)), pM(pP & E_1), pN(xmin(), pP.x2()), pS(1, 0);
+
+  bold();
+  plot(f, ymin(), ymax(), 40);
+
+  line(P(xmin(), 0), P(xmax(), 0));
+
+  line(pP, pN);
+  line(pP, pM);
+  line(pP, pS);
+
+  line(P(xmin(), ymin()), P(xmin(), ymax()));
+
+  label(P(xmin(), 0), P(-4, 0), "$X$", l);
+
+  label(pN, P(-4, 0), "$N$", l);
+
+  label(pA, P(-2, -4), "$A$", bl);
+  label(pP, P(2, 4), "$P$", t);
+  label(pS, P(0, -4), "$S$", b);
+  label(pM, P(0, -4), "$M$", b);
+
+  tikz_format();
+  end();
+}

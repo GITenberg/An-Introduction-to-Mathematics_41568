@@ -1,0 +1,44 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void ray(const P& tail, const P& head, double t = 0)
+{
+  line(tail, tail + (1 + 0.01*t)*(head - tail));
+}
+
+int main()
+{
+  picture(P(-3, -3), P(4, 3), "4.2 x 3.6in");
+
+  begin();
+  double rad(2), rad1(3), th(M_PI/3);
+  P O(0, 0), pP(polar(rad, th)), pP1(polar(rad1, th)), pM(pP & E_1),
+    pA(rad, 0), pA1(rad1, 0), pAp(-rad, 0), pA1p(-rad1, 0);
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+
+  ray(O, pP1, 15);
+  line(pP, pM);
+
+  circle(O, rad);
+  circle(O, rad1);
+
+  label(O, P(2, -4), "$O$", b);
+  label(pA, P(2, -4), "$A$", br);
+  label(pA1, P(2, -4), "$A_{1}$", br);
+
+  label(pAp, P(2, 5), "$A'$", tr);
+  label(pA1p, P(2, 2), "$A_{1}'$", tr);
+
+  label(pM, P(2, 2), "$M$", tr);
+
+  label(polar(0.5*rad, th), P(-2, 2), "$r$", tl);
+
+  label(pP, P(4, 3), "$P$", r);
+  label(pP1, P(4, 2), "$P_{1}$", r);
+
+  tikz_format();
+  end();
+}

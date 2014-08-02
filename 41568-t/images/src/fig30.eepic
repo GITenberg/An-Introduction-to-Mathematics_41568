@@ -1,0 +1,48 @@
+%% Generated from fig30.xp on Sat Dec  1 18:39:31 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [-2,2] x [0,1.5]
+%%   Actual size: 4 x 1.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4in,1.5in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,0in)--(2in,0in)--(4in,0in);
+\draw (2in,0in)--(2in,0.75in)--(2in,1.5in);
+\draw (0in,0.0183156in)--(0.0666667in,0.0238069in)--
+  (0.133333in,0.0306708in)--(0.2in,0.0391639in)--
+  (0.266667in,0.0495663in)--(0.333333in,0.0621765in)--
+  (0.4in,0.0773047in)--(0.466667in,0.0952633in)--
+  (0.533333in,0.116355in)--(0.6in,0.140858in)--
+  (0.666667in,0.169013in)--(0.733333in,0.201001in)--
+  (0.8in,0.236928in)--(0.866667in,0.276804in)--
+  (0.933333in,0.320531in)--(1in,0.367879in)--(1.06667in,0.418486in)--(1.13333in,0.471842in)--(1.2in,0.527292in)--
+  (1.26667in,0.584045in)--(1.33333in,0.64118in)--(1.4in,0.697676in)--(1.46667in,0.752432in)--(1.53333in,0.804304in)--
+  (1.6in,0.852144in)--(1.66667in,0.894839in)--
+  (1.73333in,0.931358in)--(1.8in,0.960789in)--
+  (1.86667in,0.982379in)--(1.93333in,0.995565in)--(2in,1in)--
+  (2.06667in,0.995565in)--(2.13333in,0.982379in)--
+  (2.2in,0.960789in)--(2.26667in,0.931358in)--
+  (2.33333in,0.894839in)--(2.4in,0.852144in)--
+  (2.46667in,0.804304in)--(2.53333in,0.752432in)--
+  (2.6in,0.697676in)--(2.66667in,0.64118in)--(2.73333in,0.584045in)--
+  (2.8in,0.527292in)--(2.86667in,0.471842in)--
+  (2.93333in,0.418486in)--(3in,0.367879in)--(3.06667in,0.320531in)--
+  (3.13333in,0.276804in)--(3.2in,0.236928in)--
+  (3.26667in,0.201001in)--(3.33333in,0.169013in)--
+  (3.4in,0.140858in)--(3.46667in,0.116355in)--
+  (3.53333in,0.0952633in)--(3.6in,0.0773047in)--
+  (3.66667in,0.0621765in)--(3.73333in,0.0495663in)--
+  (3.8in,0.0391639in)--(3.86667in,0.0306708in)--
+  (3.93333in,0.0238069in)--(4in,0.0183156in);
+\pgftext[at={\pgfpoint{2in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$O$}}}
+\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X'$}}}
+\pgftext[at={\pgfpoint{4in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X$}}}
+\pgftext[at={\pgfpoint{1.97233in}{1.5in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$Y$}}}
+\pgftext[at={\pgfpoint{1.97233in}{1.02767in}}] {\makebox(0,0)[br]{\hbox{\color{rgb_000000}$A$}}}
+\end{tikzpicture}

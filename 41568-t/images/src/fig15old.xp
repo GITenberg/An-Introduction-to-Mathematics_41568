@@ -1,0 +1,69 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double B1(-1), C1(4), D1(5),
+  B2(-1), C2(1), D2(-1.5),
+  A3(0), B3(-1), C3(0.25), D3(-1.5),
+  th1(Asin(C3/B3)), th2(-M_PI + th1);
+
+double ht(3);
+
+P ellip(double th)
+{
+  double denom(D1/(C1 + B1*Sin(th)));
+  return denom*P(Cos(th), Sin(th), 1);
+}
+
+P parab(double th)
+{
+  double denom(D2/(C2 + B2*Sin(th)));
+  return denom*P(Cos(th), Sin(th), 1);
+}
+
+P hyp(double th)
+{
+  double denom(D3/(C3 + A3*Cos(th) + B3*Sin(th)));
+  return denom*P(Cos(th), Sin(th), 1);
+}
+
+int main()
+{
+  picture(P(-3,-3), P(3,3), "5 x 5in");
+
+  begin();
+
+  camera.at(P(5, 0, 1)).range(100);
+
+  bold();
+  clip_box(P(ht, ht, ht));
+  P pS(0, -ht, -ht), pR(0,  ht, ht), pP(0, -ht, ht), pU(0,  ht, -ht),
+    pC(0, 0, -ht), pC1(0, 0, ht);
+  line(pS, pR, 20);
+  line(pU, pP, 20);
+  line(pC, pC1);
+
+  line(pP, pR);
+  line(pS, pU);
+
+  ellipse(pC,  ht*E_1, ht*E_2, -M_PI_2, M_PI_2);
+  ellipse(pC1, ht*E_1, ht*E_2, -M_PI_2, M_PI_2);
+
+  plot(ellip, -M_PI_2, M_PI_2, 60);
+  plot(parab, M_PI_2, 3*M_PI_2, 60);
+  plot(hyp, th2, -M_PI_2, 60);
+  plot(hyp, -th1, M_PI_2, 60);
+
+  black();
+  dashed();
+  ellipse(pC,  ht*E_1, ht*E_2, M_PI_2, 3*M_PI_2, 20);
+  ellipse(pC1, ht*E_1, ht*E_2, M_PI_2, 3*M_PI_2, 20);
+
+  plot(ellip, M_PI_2, 3*M_PI_2, 20);
+  plot(parab, -M_PI_2, M_PI_2, 20);
+  plot(hyp, -M_PI_2, -th1, 20);
+  plot(hyp, M_PI_2, M_PI_2 - 0.25*th2, 20);
+
+  tikz_format();
+  end();
+}

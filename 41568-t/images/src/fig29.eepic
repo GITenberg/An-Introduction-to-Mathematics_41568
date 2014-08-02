@@ -1,0 +1,37 @@
+%% Generated from fig29.xp on Sat Dec  1 18:37:48 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [-4,4] x [0,4]
+%%   Actual size: 4.5 x 2.25in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4.5in,2.25in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,0in)--(2.25in,0in)--(4.5in,0in);
+\draw (2.25in,0in)--(2.25in,1.125in)--(2.25in,2.25in);
+\draw (0in,0.150264in)--(0.1125in,0.160516in)--
+  (0.225in,0.171467in)--(0.3375in,0.183166in)--(0.45in,0.195662in)--
+  (0.5625in,0.209012in)--(0.675in,0.223272in)--
+  (0.7875in,0.238505in)--(0.9in,0.254778in)--(1.0125in,0.27216in)--
+  (1.125in,0.290729in)--(1.2375in,0.310564in)--(1.35in,0.331753in)--
+  (1.4625in,0.354388in)--(1.575in,0.378566in)--
+  (1.6875in,0.404395in)--(1.8in,0.431985in)--(1.9125in,0.461458in)--
+  (2.025in,0.492942in)--(2.1375in,0.526574in)--(2.25in,0.5625in)--
+  (2.3625in,0.600878in)--(2.475in,0.641873in)--
+  (2.5875in,0.685666in)--(2.7in,0.732447in)--(2.8125in,0.78242in)--
+  (2.925in,0.835801in)--(3.0375in,0.892825in)--(3.15in,0.95374in)--
+  (3.2625in,1.01881in)--(3.375in,1.08832in)--(3.4875in,1.16257in)--
+  (3.6in,1.24189in)--(3.7125in,1.32662in)--(3.825in,1.41713in)--
+  (3.9375in,1.51382in)--(4.05in,1.6171in)--(4.1625in,1.72743in)--
+  (4.275in,1.84529in)--(4.3875in,1.97119in)--(4.5in,2.10567in);
+\pgftext[at={\pgfpoint{2.25in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$O$}}}
+\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X'$}}}
+\pgftext[at={\pgfpoint{4.5in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$X$}}}
+\pgftext[at={\pgfpoint{2.22233in}{2.25in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$Y$}}}
+\pgftext[at={\pgfpoint{2.22233in}{0.590174in}}] {\makebox(0,0)[br]{\hbox{\color{rgb_000000}$A$}}}
+\end{tikzpicture}

@@ -1,0 +1,54 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void ray(const P& tail, const P& head, double t = 0)
+{
+  line(tail, tail + (1 + 0.01*t)*(head - tail));
+}
+
+int main()
+{
+  picture(P(-1.125, -1.125), P(1.5, 1.125), "4.5 x 3.86in");
+
+  begin();
+  double th(M_PI/6), th2(5*M_PI/6);
+  P O(0, 0), p0(cis(th)), p1(cis(th2)), p2(-cis(th)), p3(-cis(th2)),
+    pM(p0.x1(), 0), pM1(p1.x1(), 0);
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+
+  line(P(0, ymin()), P(0, ymax()));
+
+  circle(O, 1);
+
+  triangle(O, p3, p0);
+  triangle(O, p1, p2);
+
+  label(O, P(-2, -8), "$O$", bl);
+
+  label(p0, P(2, 2), "$P(x, y)$", tr);
+  label(p1, P(-2, 2), "$P'(x', y)$", tl);
+
+  label(p2, P(-2, -2), "$P''(x', y')$", bl);
+  label(p3, P(2, -2), "$P'''(x, y')$", br);
+
+  label(P(xmin(), 0), P(0, -4), "$X'$", b);
+  label(P(xmax(), 0), P(0, -4), "$X$", b);
+
+  label(P(0, ymin()), P(2, 0), "$Y'$", r);
+  label(P(0, ymax()), P(-2, 0), "$Y$", l);
+
+  label(P(1, 0), P(2, -4), "$A$", br);
+  label(P(-1, 0), P(-2, 2), "$A'$", tl);
+
+  label(P(0, -1), P(2, 2), "$B'$", tr);
+  label(P(0,  1), P(2, 2), "$B$", tr);
+
+  label(pM, P(2, -4), "$M$", br);
+  label(pM1, P(2, -4), "$M'$", br);
+
+  tikz_format();
+  end();
+}

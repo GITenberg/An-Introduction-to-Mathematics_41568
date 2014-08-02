@@ -1,0 +1,49 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P f(double t)
+{
+  return P(t, recip(t));
+}
+
+int main()
+{
+  picture(P(0,0), P(4,2), "4 x 2in");
+
+  begin();
+
+  P O(0, 0), pX(xmax(), 0), pY(0, ymax()), pA(f(3.5)), pB(f(1)), pC(f(0.55)),
+    pQ(f(2)), pM(pQ & E_1), pN(pQ & E_2);
+
+  bold();
+  line(O, pX);
+  line(O, pY);
+
+  plot(f, 0.5, xmax(), 40);
+
+  line(pQ, pM);
+  line(pQ, pN);
+
+  dot(pA, P(2, 2), "$A$", tr);
+  dot(pB, P(2, 2), "$B$", tr);
+  dot(pC, P(2, 2), "$C$", tr);
+
+  dot(pA & E_1);
+  dot(pC & E_2);
+
+  label(pY, P(-4, 0), "$P$", l);
+
+  label(pX, P(0, -4), "$V$", b);
+  label(O, P(0, -4), "$O$", b);
+
+  label(pQ, P(2, 2), "$Q$", tr);
+  label(pM, P(0, -4), "$M$", b);
+  label(pN, P(0, -4), "$N$", l);
+
+  label(0.5*pM, P(0, -4), "$v$", b);
+  label(0.5*(pM + pQ), P(-2, 0), "$p$", l);
+
+  tikz_format();
+  end();
+}

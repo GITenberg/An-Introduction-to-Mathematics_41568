@@ -1,0 +1,59 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double ma(2.25), mb(1), mc(sqrt((ma - mb)*(ma + mb))),
+  mx(ma*ma/mc);
+
+P f(double t)
+{
+  return P(ma*Cos(t), mb*Sin(t));
+}
+
+int main()
+{
+  picture(P(-3, -1.5), P(3, 1.5), "4.2 x 2.1in");
+
+  begin();
+
+  P pC(0, 0), pA(f(0)), pA1(f(M_PI)), pB(f(M_PI_2)), pB1(f(-M_PI_2)),
+    pP(f(1)), pM(pP & E_1), pN(mx, pP.x2()), pN1(-mx, pP.x2()),
+    pS(mc, 0), pS1(-mc, 0);
+
+  bold();
+  plot(f, 0, 2*M_PI, 120);
+
+  line(P(-mx, 0), P(mx, 0));
+  line(pB, pB1);
+
+  line(pN, pN1);
+  line(pM, pP);
+  line(pP, pS);
+  line(pP, pS1);
+
+  line(P(-mx, ymin()), P(-mx, ymax()));
+  line(P( mx, ymin()), P( mx, ymax()));
+
+  label(P( mx, 0), P(4, 0), "$X$", r);
+  label(P(-mx, 0), P(-4, 0), "$X'$", l);
+
+  label(pN, P(4, 0), "$N$", r);
+  label(pN1, P(-4, 0), "$N'$", l);
+
+  label(pA, P(2, -4), "$A$", br);
+  label(pA1, P(-2, -4), "$A'$", bl);
+
+  label(pB, P(0, 2), "$B$", t);
+  label(pB1, P(0, -4), "$B'$", b);
+
+  label(pP, P(2, 2), "$P$", t);
+
+  label(pC, P(2, -4), "$C$", br);
+
+  label(pS, P(0, -4), "$S$", b);
+  label(pM, P(0, -4), "$M$", b);
+  label(pS1, P(0, -4), "$S'$", b);
+
+  tikz_format();
+  end();
+}

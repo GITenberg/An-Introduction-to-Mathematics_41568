@@ -1,0 +1,61 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void ray(const P& tail, const P& head, double t = 0)
+{
+  line(tail, tail + (1 + 0.01*t)*(head - tail));
+}
+
+double f(double t)
+{
+  return -0.5 + 0.25*t + 0.25*exp(0.5*t);
+}
+
+Deriv df(f);
+
+P F(double t)
+{
+  return P(t, f(t));
+}
+
+int main()
+{
+  picture(P(0, 0), P(4, 2), "4 x 2in");
+
+  begin();
+  double mP(3.25), mQ(mP - 1);
+  P O(0, 0), pP(F(mP)), pQ(F(mQ)), pT(pP - pP.x2()*P(1.0/df.eval(mP), 1)),
+    pN(pQ & E_1), pM(pP & E_1);
+
+  double mA(pT.x1());
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  plot(F, mA, mP + 0.5, 40);
+
+  ray(pT, pP, 30);
+  line(pN, pQ);
+  line(pM, pP);
+
+  label(O, P(0, -4), "$O$", b);
+
+  label(pQ, P(0, 2), "$Q$", tl);
+  label(pP - P(1, df.eval(mP)), P(2, -2), "$Q'$", br);
+  label(pP, P(0, 2), "$P$", tl);
+
+  label(pP, P(2, -2), "$(x, y)$", br);
+
+  label(F(mA), P(0, 2), "$A$", tl);
+  label(pT, P(0, -4), "$T$", b);
+  label(pN, P(0, -4), "$N$", b);
+  label(pM, P(0, -4), "$M$", b);
+
+  label(P(xmax(), 0), P(0 ,-4), "$X$", b);
+  label(P(0, ymax()), P(-2, 0), "$Y$", l);
+
+  tikz_format();
+  end();
+}

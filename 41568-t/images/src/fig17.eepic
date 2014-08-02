@@ -1,0 +1,40 @@
+%% Generated from fig17.xp on Sat Dec  1 21:44:16 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [-1,7] x [-4,4]
+%%   Actual size: 2.5 x 2.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (2.5in,2.5in);
+\pgfsetlinewidth{0.8pt}
+\draw (1.5625in,0in)--(1.44063in,0.0625in)--(1.325in,0.125in)--
+  (1.21562in,0.1875in)--(1.1125in,0.25in)--(1.01562in,0.3125in)--
+  (0.925in,0.375in)--(0.840625in,0.4375in)--(0.7625in,0.5in)--
+  (0.690625in,0.5625in)--(0.625in,0.625in)--(0.565625in,0.6875in)--
+  (0.5125in,0.75in)--(0.465625in,0.8125in)--(0.425in,0.875in)--
+  (0.390625in,0.9375in)--(0.3625in,1in)--(0.340625in,1.0625in)--
+  (0.325in,1.125in)--(0.315625in,1.1875in)--(0.3125in,1.25in)--
+  (0.315625in,1.3125in)--(0.325in,1.375in)--(0.340625in,1.4375in)--
+  (0.3625in,1.5in)--(0.390625in,1.5625in)--(0.425in,1.625in)--
+  (0.465625in,1.6875in)--(0.5125in,1.75in)--(0.565625in,1.8125in)--
+  (0.625in,1.875in)--(0.690625in,1.9375in)--(0.7625in,2in)--
+  (0.840625in,2.0625in)--(0.925in,2.125in)--(1.01562in,2.1875in)--
+  (1.1125in,2.25in)--(1.21563in,2.3125in)--(1.325in,2.375in)--
+  (1.44063in,2.4375in)--(1.5625in,2.5in);
+\draw (0in,1.25in)--(1.25in,1.25in)--(2.5in,1.25in);
+\draw (1.26953in,2.34375in)--(0.634766in,2.34375in)--(0in,2.34375in);
+\draw (1.26953in,2.34375in)--(1.26953in,1.79688in)--(1.26953in,1.25in);
+\draw (1.26953in,2.34375in)--(0.947266in,1.79688in)--(0.625in,1.25in);
+\draw (0in,0in)--(0in,1.25in)--(0in,2.5in);
+\pgftext[at={\pgfpoint{-0.055348in}{1.25in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$X$}}}
+\pgftext[at={\pgfpoint{-0.055348in}{2.34375in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$N$}}}
+\pgftext[at={\pgfpoint{0.284826in}{1.19465in}}] {\makebox(0,0)[tr]{\hbox{\color{rgb_000000}$A$}}}
+\pgftext[at={\pgfpoint{1.29721in}{2.3991in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$P$}}}
+\pgftext[at={\pgfpoint{0.625in}{1.19465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$S$}}}
+\pgftext[at={\pgfpoint{1.26953in}{1.19465in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$M$}}}
+\end{tikzpicture}

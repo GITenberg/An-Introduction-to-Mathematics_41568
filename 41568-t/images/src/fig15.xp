@@ -1,0 +1,121 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+#include "conic.h"
+using namespace ePiX;
+
+const double ht(3);
+
+P Top(double th)
+{
+  return ht*P(Cos(th), Sin(th), 1);
+}
+
+P Bot(double th)
+{
+  return ht*P(Cos(th), Sin(th), -1);
+}
+
+int main()
+{
+  picture(P(-3,-3), P(3,3), "4 x 4in");
+
+  begin();
+
+  camera.at(P(5, 0, 1)).range(100);
+
+  bold();
+  clip_box(P(ht, ht, ht));
+
+  double d_th(0.15),
+  th1(Asin(-0.25)+ 0.1), th2(-M_PI + th1);
+
+  conic ellip(0, -1, 4, 5),
+    parab(0, -1, 1, -1.5),
+    hyp(0.125, -1, 0.25, -1.5);
+
+  P pS(Bot(-M_PI_2)), pU(Bot(M_PI_2)), pR(Top(M_PI_2)), pP(Top(-M_PI_2)),
+    pA(ellip.eval(M_PI_2)), pAp(ellip.eval(-M_PI_2)),
+    pA1(parab.eval(-M_PI_2)), pA2(hyp.eval(-M_PI_2)),
+    pC(0, 0, -ht), pC1(0, 0, ht);
+
+  Segment sD(parab.join(-ht));
+  Segment sG(hyp.join(-ht));
+  Segment sL(hyp.join(ht));
+
+  dashed();
+  plot(Top, M_PI_2, 3*M_PI_2, 20);
+  plot(Bot, M_PI_2, 3*M_PI_2, 20);
+
+  ellip.draw(M_PI_2, 3*M_PI_2, 20);
+  parab.draw(-M_PI_2, M_PI_2, 20);
+  hyp.draw(-M_PI_2, 0, 20);
+  hyp.draw(M_PI_2, 5*M_PI/6, 20);
+
+  solid();
+  pen(White(), 3);
+  line(pC, pC1);
+
+  bold(Black());
+  clip_box(P(ht + 0.5, ht + 0.5, ht + 0.5));
+  line(Bot(-M_PI_2 - d_th), Top(M_PI_2 - d_th), 20);
+  line(Bot( M_PI_2 + d_th), Top(-M_PI_2 + d_th), 20);
+
+  label(pP, P(-2, -2), "$P$", bl);
+  label(pS, P(-2, 2), "$S$", tl);
+
+  label(pR, P(2, -2), "$R$", br);
+  label(pU, P(2, 2), "$U$", tr);
+
+  label(pC, P(0, -4), "$C$", b);
+  label(pC1, P(0, 4), "$C'$", t);
+
+  label(pA, P(0, 0), "$A$", br);
+  label(pAp, P(-2, -2), "$A'$", bl);
+
+  label(ellip.eval(M_PI/6), P(2, -4), "$B$", b);
+  label(ellip.eval(7*M_PI/6), P(-2, 2), "$B'$", tl);
+
+  label(pA1, P(2, 2), "$A_{1}$", tr);
+  label(pA2, P(4, 0), "$A_{2}$", tr);
+  label(hyp.eval(M_PI_2), P(2, -2), "$A_{2}'$", br);
+
+  label(sD.end1(), P(-2, 2), "$D'$", tl);
+  label(sD.end2(), P(-2, -4), "$D_{1}$", b);
+
+  label(sG.end1(), P(-2, 2), "$G_{2}'$", tl);
+  label(sG.end2(), P(-2, -4), "$G_{2}$", br);
+
+  label(sL.end1(), P(-2, 2), "$L_{2}$", t);
+  label(sL.end2(), P(-2, -2), "$L_{2}'$", bl);
+
+  label(P(0, 0, 0), P(8, -2), "$V$", r);
+
+  label(Top(-M_PI/24), P(0, -4), "$Q$", bl);
+  label(Bot(-M_PI/24), P(0, -4), "$T$", bl);
+
+  clip_box(P(ht, ht, ht));
+  line(pC, pC1);
+  line(pA, pAp);
+
+  sD.draw();
+  line(sD.midpoint(), pA1);
+
+  sG.draw();
+  Line(sG.midpoint(), pA2);
+
+  line(pC, pC1);
+
+  line(pP, pR);
+  line(pS, pU);
+
+  plot(Top, -M_PI_2, M_PI_2, 60);
+  plot(Bot, -M_PI_2 - d_th, M_PI_2 + d_th, 60);
+
+  ellip.draw(-M_PI_2, M_PI_2, 60);
+  parab.draw(M_PI_2 + 0.1, 3*M_PI_2, 60);
+  hyp.draw(-M_PI, -M_PI_2, 60);
+  hyp.draw(M_PI/6, M_PI_2, 60);
+
+  tikz_format();
+  end();
+}

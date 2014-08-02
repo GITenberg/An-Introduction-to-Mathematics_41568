@@ -1,0 +1,25 @@
+%% Generated from fig22.xp on Sat Dec  1 16:54:38 EST 2012 by
+%% ePiX-1.2.4
+%% 
+%%   Cartesian bounding box: [0,3] x [0,2]
+%%   Actual size: 2 x 1.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (2in,1.5in);
+\pgfsetlinewidth{0.8pt}
+\draw (0in,0in)--(1.33333in,1.5in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](1.31954in,1.48449in)--(1.3092in,1.41037in)--
+  (1.33333in,1.5in)--(1.24715in,1.46553in)--(1.31954in,1.48449in)--cycle;
+\draw (0in,0in)--(2in,1.125in);
+\draw [fill](1.98191in,1.11482in)--(1.94799in,1.04812in)--
+  (2in,1.125in)--(1.90729in,1.12048in)--(1.98191in,1.11482in)--cycle;
+\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$E$}}}
+\pgftext[at={\pgfpoint{1.35933in}{1.52925in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$A$}}}
+\pgftext[at={\pgfpoint{2.026in}{1.15425in}}] {\makebox(0,0)[bl]{\hbox{\color{rgb_000000}$B$}}}
+\end{tikzpicture}

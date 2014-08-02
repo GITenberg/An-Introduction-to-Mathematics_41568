@@ -1,0 +1,35 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double f(double t)
+{
+  return 0.75*exp(-0.33*t)*Sin(M_PI*t);
+}
+
+int main()
+{
+  picture(P(-3, -2), P(5, 2), "4 x 2in");
+
+  begin();
+  P O(0, 0), pA(-2, 0), pB(-1, 0), pC(1, 0), pD(2, 0), pE(3, 0), pF(4, 0);
+
+  bold();
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  plot(f, -2, 4, 240);
+
+  dot(O, P(-2, 2), "$O$", tl);
+
+  dot(pA, P(0, -4), "$A$", b);
+  dot(pB, P(2, 2), "$B$", tr);
+
+  dot(pC, P(-2, -4), "$C$", bl);
+  dot(pD, P( 2, -4), "$D$", b);
+  dot(pE, P(-2, -4), "$E$", b);
+  dot(pF, P( 2, -4), "$F$", b);
+
+  tikz_format();
+  end();
+}

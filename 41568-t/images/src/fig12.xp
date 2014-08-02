@@ -1,0 +1,33 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(0, 0), P(12, 9), "3.2 x 2.4in");
+
+  begin();
+
+  double r1(3.75), r2(2.5), th1(M_PI/8), th2(M_PI/3);
+  P O(0, 0), pP(polar(r1, th1)), pQ(polar(r2, th2)), pR(polar(r1*r2, th1+th2));
+
+  bold();
+
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  line(O, pP);
+  line(O, pQ);
+  line(O, pR);
+
+  label(P(xmax(), 0), P(0, -4), "$X$", b);
+  label(P(0, ymax()), P(-2, 0), "$Y$", l);
+  label(O, P(0, -4), "$O$", b);
+
+  label(pP, P(2, 0), "$P$", r);
+  label(pQ, P(2, 0), "$Q$", r);
+  label(pR, P(2, 0), "$R$", r);
+
+  tikz_format();
+  end();
+}

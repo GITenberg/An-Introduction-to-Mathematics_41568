@@ -1,0 +1,43 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double ma(2), mb(1.5), mc(sqrt((ma - mb)*(ma + mb))), mt(M_PI_2), dt(0.3);
+
+P f(double t)
+{
+  return P(ma*Cos(t), mb*Sin(t));
+}
+
+void Arrow(const P& tail, const P& head, double t = 0.5)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+}
+
+int main()
+{
+  picture(P(-ma,-mb), P(ma,mb), "2 x 1.5in");
+
+  begin();
+  arrow_width(6);
+  arrow_ratio(2);
+  arrow_inset(0.75);
+
+  P Sun(-mc, 0), pP(f(mt)), pV(f(mt + 0.001));
+
+  bold();
+  plot(f, 0, 2*M_PI, 120);
+
+  spot(Sun, P(0, -4), "\\textsf{\\itshape Sun}", b);
+  spot(pP, P(0, 4), "\\textsf{\\itshape Planet}", tr);
+
+  Arrow(pP, Sun, 0.4);
+  arrow(f(mt + dt), f(mt + dt + 0.001));
+
+  label(0.5*(pP + Sun), P(2, -2), "\\textsf{\\itshape Force}", br);
+
+  tikz_format();
+  end();
+}

@@ -1,0 +1,40 @@
+%% Generated from fig6.xp on Thu Nov 29 20:42:07 EST 2012 by
+%% ePiX-1.2.9
+%% 
+%%   Cartesian bounding box: [0,2] x [0,1.5]
+%%   Actual size: 2 x 1.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (2in,1.5in);
+\pgfsetlinewidth{0.8pt}
+\draw (0.75in,0in)--(1.5in,0in);
+\draw (0in,0in)--(0.75in,0in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](0.729244in,0in)--(0.666978in,-0.041511in)--
+  (0.75in,0in)--(0.666978in,0.041511in)--(0.729244in,0in)--cycle;
+\draw (1in,0.75in)--(2in,1.5in);
+\draw (0in,0in)--(1in,0.75in);
+\draw [fill](0.983396in,0.737547in)--(0.958489in,0.666978in)--
+  (1in,0.75in)--(0.908676in,0.733396in)--(0.983396in,0.737547in)--cycle;
+\draw (0.25in,0.75in)--(0.5in,1.5in);
+\draw (0in,0in)--(0.25in,0.75in);
+\draw [fill](0.243437in,0.73031in)--(0.263127in,0.658111in)--
+  (0.25in,0.75in)--(0.184365in,0.684365in)--(0.243437in,0.73031in)--cycle;
+\draw (1.75in,0.75in)--(2in,1.5in);
+\draw (1.5in,0in)--(1.75in,0.75in);
+\draw [fill](1.74344in,0.73031in)--(1.76313in,0.658111in)--
+  (1.75in,0.75in)--(1.68437in,0.684365in)--(1.74344in,0.73031in)--cycle;
+\draw (1.25in,1.5in)--(2in,1.5in);
+\draw (0.5in,1.5in)--(1.25in,1.5in);
+\draw [fill](1.22924in,1.5in)--(1.16698in,1.45849in)--
+  (1.25in,1.5in)--(1.16698in,1.54151in)--(1.22924in,1.5in)--cycle;
+\pgftext[at={\pgfpoint{-0.027674in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$A$}}}
+\pgftext[at={\pgfpoint{1.47233in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$B$}}}
+\pgftext[at={\pgfpoint{2.02767in}{1.52767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$C$}}}
+\pgftext[at={\pgfpoint{0.527674in}{1.52767in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$D$}}}
+\end{tikzpicture}

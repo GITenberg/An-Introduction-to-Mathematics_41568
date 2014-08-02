@@ -1,0 +1,72 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void Arrow(const P& tail, const P& head, double t = 0.5)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+}
+
+void Arrow(const P& tail, const P& head, double t,
+	   const P& offset, const std::string& msg, epix_label_posn al)
+{
+  P tmp(tail + t*(head - tail));
+  line(tmp, head);
+  arrow(tail, tmp);
+
+  label(tmp, offset, msg, al);
+}
+
+int main()
+{
+  picture(P(-2, -2), P(4, 2), "4.5 x 3in");
+
+  begin();
+  arrow_width(6);
+  arrow_ratio(2);
+  arrow_inset(0.75);
+
+  P O(0, 0), pP(1.25, 0.5), pQ(0.75, 1.5), pR(pP + pQ), pS(pR.x1(), pP.x2());
+
+  bold();
+
+  line(P(xmin(), 0), P(xmax(), 0));
+  line(P(0, ymin()), P(0, ymax()));
+
+  line(pP, pP & E_1);
+  line(pQ, pQ & E_1);
+  line(pR, pR & E_1);
+  line(pP, pS);
+
+  Arrow(O, pP, 0.8);
+  Arrow(O, pQ, 0.8);
+
+  label(P(xmin(), 0), P(0, -4), "$X'$", b);
+  label(P(xmax(), 0), P(0, -4), "$X$", b);
+
+  label(P(0, ymin(), 0), P(-2, 0), "$Y'$", l);
+  label(P(0, ymax(), 0), P(-2, 0), "$Y$", l);
+
+  label(O, P(-2, -4), "$O$", bl);
+
+  label(pP & E_1, P(0, -4), "$M$", b);
+  label(pQ & E_1, P(0, -4), "$M_{1}$", b);
+  label(pR & E_1, P(0, -4), "$M'$", b);
+
+  label(pP, P(-2, 2), "$P$", tl);
+  label(pQ, P(-2, 2), "$Q$", tl);
+  label(pR, P(2, 2), "$R$", tr);
+  label(pS, P(2, 0), "$S$", r);
+
+  dashed();
+  dash_size(2);
+  line(pP, pR);
+  line(pQ, pR);
+
+  Arrow(O, pR, 0.8);
+
+  tikz_format();
+  end();
+}
