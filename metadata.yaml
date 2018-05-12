@@ -13,6 +13,8 @@ creator:
     url: http://www.gutenberg.org/2009/agents/8283
     wikipedia: http://en.wikipedia.org/wiki/Alfred_North_Whitehead
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/41568#An-Introduction-to-Mathematics
 gutenberg_bookshelf: Mathematics
 gutenberg_issued: '2012-12-06'
 gutenberg_type: Text
