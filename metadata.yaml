@@ -1,0 +1,29 @@
+_repo: An-Introduction-to-Mathematics_41568
+_version: 0.1.0
+covers:
+- cover_type: generated
+  image_path: cover.png
+creator:
+  author:
+    agent_name: Whitehead, Alfred North
+    alias: Whitehead, A. N. (Alfred North)
+    birthdate: 1861
+    deathdate: 1947
+    gutenberg_agent_id: '8283'
+    url: http://www.gutenberg.org/2009/agents/8283
+    wikipedia: http://en.wikipedia.org/wiki/Alfred_North_Whitehead
+description: ''
+gutenberg_bookshelf: Mathematics
+gutenberg_issued: '2012-12-06'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '41568'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Mathematics'
+- !lcc 'QA'
+title: An Introduction to Mathematics
+url: http://www.gutenberg.org/ebooks/41568
